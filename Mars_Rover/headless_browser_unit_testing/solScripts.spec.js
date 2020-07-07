@@ -2134,6 +2134,7 @@ describe("SOL_SCRIPTS.JS", function() {
         });
         describe("if this is the second time that the URL has been clicked and the 'visitedLinkString' is equal to an empty String", function () {
             it("adds the String representation of the 'currentIndex' variable to the 'visitedLinkString'", function() {
+                currentIndex = 7;
                 numClicks[currentIndex] = 1;
                 visitedLinkString = "";
                 expect(visitedLinkString).toMatch("");
