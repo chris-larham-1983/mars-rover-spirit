@@ -1,0 +1,599 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for audioScripts.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="index.html">All files</a> audioScripts.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.38% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>94/104</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">73.68% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>28/38</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>9/9</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.38% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>94/104</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">512x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">498x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">181x</span>
+<span class="cline-any cline-yes">164x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">512x</span>
+<span class="cline-any cline-yes">512x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">533x</span>
+<span class="cline-any cline-yes">443x</span>
+<span class="cline-any cline-yes">402x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">443x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">90x</span>
+<span class="cline-any cline-yes">89x</span>
+<span class="cline-any cline-yes">89x</span>
+<span class="cline-any cline-yes">89x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">89x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* this event listener is added in 'solSelect_scripts.spec.js' in order to unit test its efficacy: document.addEventListener("visibilitychange", hiddenOrShown); */ //add a 'visibilitychange' event listener to the document that will invoke the 'hiddenOrShow()' function when fired
+/* this event listener is added in 'solSelect_scripts.spec.js' in order to unit test its efficacy: window.addEventListener("pageshow", showProgress); */ //add a 'pageshow' event listener to the window object that will invoke the 'showProgress()' function when fired
+/* this event listener is added in 'solSelect_scripts.spec.js' in order to unit test its efficacy: window.addEventListener("pagehide", saveAudio); /*/ //add a 'pagehide' event listener to the window object that will invoke the 'saveAudio()' function when fired
+&nbsp;
+let musicPlayer; //declare a variable that will be initialized to refer to the 'musicPlayer' &lt;audio&gt; element (in the 'showProgress()' function, or the 'toggleAudioControls()' function - whichever is invoked first)
+let volumeDisplay; //declare a variable that will be initialized to refer to the 'volumeDisplay' &lt;p&gt; (in the 'showProgress()' function, or the 'toggleAudioControls()' function - whichever is invoked first)
+let musicalProgress; //declare a variable that will be initialized to refer to the 'musicalProgress' &lt;progress&gt; element (in the 'showProgress()' function, or the 'toggleAudioControls()' function - whichever is invoked first)
+let musicalPercentage; //declare a variable that will be initialized to refer to the 'musicalPercentage' &lt;p&gt; element (in the 'showProgress()' function, or the 'toggleAudioControls()' function - whichever is invoked first)
+let autoplayError; //declare a variable that will be initialized to refer to the 'autoplayError' &lt;span&gt; element (in the 'showProgress()' function, or the 'toggleAudioControls()' function - whichever is invoked first)
+&nbsp;
+let preferredVolume; //declare a variable that will store the User's 'preferredVolume'
+let musicPlaying = false; //declare a variable that keeps track of whether there is 'musicPlaying'
+let playTime; //declare a variable that will keep track of the 'currentTime' of the 'musicPlayer'
+let userWantsMusic; //declare - but don't initialize - a variable that will store a String-ified boolean representation of whether the User wants the music playing (either "true" or "false")
+&nbsp;
+let progressValue; //declare a variable that will keep track of the musical progress [identical to 'playTime']
+let progressMax = 1625; //declare a variable that represents the length in seconds ['duration'] of the mp3 played in the 'musicPlayer'
+let progressPercent; //declare a variable that will represent the musical progress as a percentage
+&nbsp;
+function hiddenOrShown() { //called when the document experiences a change in visibility
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(document.visibilityState === "hidden") { //if the document is a background tab or part of a minimized window, or the OS screen lock is active
+<span class="cstat-no" title="statement not covered" >        saveAudio(); </span>//invoke the 'saveAudio()' function
+    }
+    else <span class="missing-if-branch" title="else path not taken" >E</span>if(document.visibilityState === "visible") { //otherwise, if the document is the foreground tab of a non-minimized window
+        showProgress(); //invoke the 'showProgress()' function
+    }
+}
+&nbsp;
+function saveAudio() { //triggered when the document's visibilityState changes to 'hidden' and when the 'pagehide' event fires
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(musicPlaying) { //if there was 'musicPlaying' as the document's visibilityState changed to 'hidden'
+        musicPlayer.pause(); //pause the music
+        musicPlaying = false; //set 'musicPlaying' to false
+        playTime = musicPlayer.currentTime; //set the page variable 'playTime' to the current track time of the 'musicPlayer'
+        localStorage.setItem("playTime", playTime.toString()); //save the value of the 'playTime' page variable in localStorage
+    }
+}
+&nbsp;
+function showProgress() { //function triggered when 'audioControls' is no longer hidden || the document has become 'visible' as a result of the 'visibilityChange' event || the 'pageshow' event fires
+    if(localStorage.getItem("playTime")) { //if the variable 'playTime' - and, implicitly, the 'preferredVolume' and 'userWantsMusic' variables - DOES exist in localStorage...
+        if(!musicPlayer) { //if 'musicPlayer' equates to a 'falsy' value (i.e. it hasn't yet been initialized - and, therefore, neither have the 'musicalProgress', 'musicalPercentage', 'volumeDisplay', or 'autoplayError' variables)
+            musicPlayer = document.getElementById("musicPlayer"); //make the 'musicPlayer' variable refer to the 'musicPlayer' &lt;audio&gt; element
+            musicalProgress = document.getElementById("musicalProgress"); //make the 'musicalProgress' variable refer to the 'musicalProgress' &lt;progress&gt; element
+            musicalPercentage = document.getElementById("musicalPercentage"); //make the 'musicalPercentage' variable refer to the 'musicalPercentage' &lt;p&gt; element
+            volumeDisplay = document.getElementById("volumeDisplay"); //make the 'volumeDisplay' variable refer to the 'volumeDisplay' &lt;p&gt; element
+            autoplayError = document.querySelector(".autoplayError"); //make the 'autoplayError' variable refer to the 'autoplayError' &lt;span&gt; element
+        }
+        playTime = Number(localStorage.getItem("playTime")); //set the 'playTime' page variable equal to the numerical equivalent of the string 'playTime' value stored locally
+        preferredVolume = Number(localStorage.getItem("preferredVolume")); //set the 'preferredVolume' page variable equal to the numerical equivalent of the string 'preferredVolume' value stored locally
+        musicPlayer.currentTime = playTime; //set the 'currentTime' property of 'musicPlayer' equal to 'playTime'
+        musicPlayer.volume = preferredVolume; //set the 'volume' property of 'musicPlayer' equal to 'preferredVolume'
+        volumeDisplay.innerHTML = "&lt;br/&gt;&lt;i class='fa fa-volume-up'&gt;&lt;/i&gt;&lt;br/&gt;" + Math.round(preferredVolume * 100) + "%"; //update the 'volumeDisplay' paragraph for the User's benefit, displaying the current volume as a percentage of the 'musicPlayer' maximum
+        musicalProgress.max = progressMax; //set the 'max' attribute of the 'musicalProgress' &lt;progress&gt; element equal to 'progressMax'
+        progressValue = Number(localStorage.getItem("playTime")); //... set the 'progressValue' page variable equal to the numerical equivalent of the string 'playTime' variable stored in localStorage [i.e. equal to the 'playTime' page variable]
+        musicalProgress.value = progressValue; //set the 'value' attribute of the 'musicalProgress' element equal to 'progressValue'
+        progressPercent = Math.round(musicalProgress.position * 100); //set the 'progressPercent' variable equal to the rounded integer representation of ((musicalProgress.value)/(musicalProgress.max))*100
+        musicalPercentage.innerHTML = "MUSICAL PROGRESS: " + progressPercent + "% " + displayMinsAndSecs(Math.round(progressValue)); //display the 'progressPercent' in the 'musicalPercentage' &lt;p&gt; element, as well as displaying the musicPlayer's 'currentTime' in MM:SS format
+        userWantsMusic = localStorage.getItem("userWantsMusic"); //set the 'userWantsMusic' page variable equal to the String-ified boolean variable stored locally
+        if(userWantsMusic === "true") { //if the User has previously indicated that s/he wants music playing
+            try {
+                playAudio(); //try to invoke the playAudio() function
+                autoplayError.innerHTML = "Autoplay Functionality: Enabled"; //display the message "Autoplay Functionality: Enabled" in the 'autoplayError' &lt;span&gt; element
+            }
+            catch(error) { //if the current context disallows musical autoplay...
+                autoplayError.innerHTML = "Autoplay Functionality: Disabled"; //display the message "Autoplay Functionality: Disabled" in the 'autoplayError' &lt;span&gt; element
+            }
+        }
+    }
+    else { //if the variable 'playTime' (and, therefore, the 'preferredVolume' variable) does NOT exist in localStorage...
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(!musicPlayer) { //if 'musicPlayer' equates to a 'falsy' value
+<span class="cstat-no" title="statement not covered" >            musicPlayer = document.getElementById("musicPlayer"); </span>//make the 'musicPlayer' variable refer to the 'musicPlayer' &lt;audio&gt; element
+<span class="cstat-no" title="statement not covered" >            musicalProgress = document.getElementById("musicalProgress"); </span>//make the 'musicalProgress' variable refer to the 'musicProgress' &lt;progress&gt; element
+<span class="cstat-no" title="statement not covered" >            musicalPercentage = document.getElementById("musicalPercentage"); </span>//make the 'musicalPercentage' variable refer to the 'musicalPercentage' &lt;p&gt; element
+<span class="cstat-no" title="statement not covered" >            volumeDisplay = document.getElementById("volumeDisplay"); </span>//make the 'volumeDisplay' variable refer to the 'volumeDisplay' &lt;p&gt; element
+<span class="cstat-no" title="statement not covered" >            autoplayError = document.querySelector(".autoplayError"); </span>//make the 'autoplayError' variable refer to the 'autoplayError' &lt;span&gt; element
+        }
+        progressValue = "0"; //set the 'progressValue' page variable equal to the String representation of numeric 0
+        preferredVolume = 0.6; //set the 'preferredVolume' page variable to 0.6
+        playTime = 0; //set the 'playTime' page variable to 0
+        localStorage.setItem("playTime", playTime.toString()); //set a 'playTime' variable in localStorage, with the string value of "0"
+        localStorage.setItem("preferredVolume", preferredVolume.toString()); //set a 'preferredVolume' variable in localStorage, with the string value of "0.6"
+        musicPlayer.currentTime = playTime; //set the 'currentTime' property of 'musicPlayer' equal to 'playTime'
+        musicPlayer.volume = preferredVolume; //set the 'volume' property of 'musicPlayer' equal to 'preferredVolume'
+        volumeDisplay.innerHTML = "&lt;br/&gt;&lt;i class='fa fa-volume-up'&gt;&lt;/i&gt;&lt;br/&gt;" + Math.round(preferredVolume * 100) + "%"; //update the 'volumeDisplay' paragraph for the user's benefit, displaying the current volume as a percentage of the 'musicPlayer' maximum
+        musicalProgress.max = progressMax; //set the 'max' attribute of the 'musicalProgress' element equal to 'progressMax'
+        musicalProgress.value = progressValue; //set the 'value' attribute of the 'musicalProgress' element equal to 'progressValue'
+        progressPercent = 0; //set the 'progressPercent' variable equal to numeric zero
+        musicalPercentage.innerHTML = "MUSICAL PROGRESS: " + progressPercent + "% " + displayMinsAndSecs(0); //display the 'progressPercent' in the 'musicalPercentage' paragraph, as well as displaying the musicPlayer's 'currentTime' in MM:SS format
+        userWantsMusic = "false"; //set the 'userWantsMusic' page variable to "false", since the User has not yet indicated that s/he wants music playing
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(document.querySelector("#pageStatus")) { //if there is an element with an id attribute of 'pageStatus' in the &lt;html&gt; document
+        document.querySelector("#pageStatus").innerHTML = "Page Status: Fully Loaded"; //set the innerHTML of the 'pageStatus' &lt;span&gt; element to "Page Status: Fully Loaded"
+    }
+}
+&nbsp;
+function displayMinsAndSecs(progressValue){ //called from within the 'updateMusicalProgress()' function &amp;&amp; the 'showProgress()' function; returns the musical progress in MM:SS format
+    if(progressValue &lt; 60) { //if the musicPlayer's 'currentTime' is less than sixty seconds
+        if(progressValue &lt; 10) { //if the musicPlayer's 'currentTime' is less than ten seconds
+            progressValue = "0" + progressValue; //prefix 'progressValue' with a 0
+        }
+        return "00:" + progressValue; //return a string in 00:SS format
+    }
+    else if(progressValue &lt; 600) { //otherwise, if the musicPlayer's 'currentTime' is less than ten minutes [six hundred seconds]
+        let mins = Math.floor(progressValue/60); //let 'mins' represent the rounded-down result of 'progressValue' divided by 60
+        let secs = progressValue % 60; //let 'secs' represent the remainder of 'progressValue' divided by 60
+        if(secs &lt; 10) { //if 'secs' is less than 10
+            secs = "0" + secs; //prefix 'secs' with a 0
+        }
+        return "0" + mins + ":" + secs; //return a string in 0M:SS format
+    }
+    else { //lastly, the musicPlayer's 'currentTime' is at least 600 [ten minutes]
+        let mins = Math.floor(progressValue/60); //let 'mins' represent the rounded-down result of 'progressValue' divided by 60
+        let secs = progressValue % 60; //let 'secs' represent the remainder of 'progressValue' divided by 60
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(secs &lt; 10) { //if 'secs' is less than 10
+            secs = "0" + secs; //prefix 'secs' with a 0
+        }
+        return mins.toString() + ":" + secs; //return a string in MM:SS format
+    }
+}
+&nbsp;
+function playAudio() { //function triggered when the user clicks the 'PLAY' button||invoked programmatically from within 'showProgress()' if the 'userWantsMusic' variable is TRUE
+    if(!musicPlaying) { //if there is no 'musicPlaying'
+        musicPlayer.play(); //begin playing music from the same point in the 27-minute-5-second track that it was last played at, and at the User's preferred volume
+        musicPlaying = true; //set the 'musicPlaying' page variable to TRUE
+        userWantsMusic = "true"; //set the 'userWantsMusic' variable to 'true', since the User wants music playing
+        localStorage.setItem("userWantsMusic", "true"); //set a variable called 'userWantsMusic' to 'true' in local storage
+        updateMusicalProgress(); //call the 'updateMusicalProgress()' function
+    }
+}
+&nbsp;
+function updateMusicalProgress() { //called from within the 'playAudio()' function after music has begun playing
+    if(musicPlaying) { //check to see if there is 'musicPlaying' -- this will return FALSE after the User clicks the 'PAUSE' button
+        progressValue = musicPlayer.currentTime; //set the 'progressValue' page variable equal to the 'currentTime' of the 'musicPlayer'
+        musicalProgress.value = progressValue; //set the 'value' property of the 'musicalProgress' &lt;progress&gt; element equal to 'progressValue'
+        progressPercent = (musicalProgress.position)*100; //set the value of the 'progressPercent' page variable equal to ((musicalProgress.value)/(musicalProgress.max))*100
+        musicalPercentage.innerHTML =  "MUSICAL PROGRESS: " + Math.round(progressPercent) + "% " + displayMinsAndSecs(Math.round(progressValue)); //display the 'progressPercent' as a rounded integer in the 'musicalPercentage' paragraph, plus show the musical progress in MM:SS format
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(progressValue &gt;= progressMax) { //if the 'currentTime' of the 'musicPlayer' indicates that the track has finished...
+<span class="cstat-no" title="statement not covered" >            musicPlayer.pause(); </span>//pause the music
+<span class="cstat-no" title="statement not covered" >            playTime = 0; </span>//set the 'playTime' page variable to 0
+<span class="cstat-no" title="statement not covered" >            musicPlayer.currentTime = playTime; </span>//set the 'currentTime' property of the 'musicPlayer' equal to 'playTime'
+<span class="cstat-no" title="statement not covered" >            musicPlayer.play(); </span>//play the music again from the beginning
+        }
+        setTimeout(updateMusicalProgress, 1000); //invoke the 'updateMusicalProgress()' method after a delay of one second
+    }
+}
+&nbsp;
+function pauseAudio() { //function triggered when the user clicks the 'PAUSE' button
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(musicPlaying) { //if there is music playing...
+        musicPlayer.pause(); //pause the music
+        musicPlaying = false; //set 'musicPlaying' to FALSE
+        userWantsMusic = "false"; //set the 'userWantsMusic' variable to 'false', since the User does not want music playing
+        localStorage.setItem("userWantsMusic", "false"); //set a variable called 'userWantsMusic' to 'false' in local storage
+        playTime = musicPlayer.currentTime; //set the page variable 'playTime' to the current track time of the 'musicPlayer'
+        localStorage.setItem("playTime", playTime.toString()); //save the value of the 'playTime' page variable in localStorage
+    }
+}
+&nbsp;
+function volumeUp() { //function triggered when the user clicks the &lt;button&gt; that has a 'volume up' icon displayed on it
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(preferredVolume &lt;= 0.9) { //if volume is less than the maximum...
+        preferredVolume += 0.1; //increase the volume by a tenth of the maximum
+        musicPlayer.volume = preferredVolume; //set the volume of the 'musicPlayer' to the new 'preferredVolume'
+        volumeDisplay.innerHTML = "&lt;br/&gt;&lt;i class='fa fa-volume-up'&gt;&lt;/i&gt;&lt;br/&gt;" + Math.round((preferredVolume * 100)) + "%"; //update the 'volumeDisplay' &lt;p&gt; element
+        localStorage.setItem("preferredVolume", preferredVolume.toString()); //store the new 'preferredVolume' in localStorage
+    }
+}
+&nbsp;
+function volumeDown() { //function triggered when the user clicks the &lt;button&gt; that has a 'volume down' icon displayed on it
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(preferredVolume &gt;= 0.1) { //if the volume is not muted...
+        preferredVolume -= 0.1; //decrease the volume by a tenth of the maximum
+        musicPlayer.volume = preferredVolume; //set the volume of the 'musicPlayer' to the new 'preferredVolume'
+        volumeDisplay.innerHTML = "&lt;br/&gt;&lt;i class='fa fa-volume-up'&gt;&lt;/i&gt;&lt;br/&gt;" + Math.round((preferredVolume * 100)) + "%"; //update the 'volumeDisplay' &lt;p&gt; element
+        localStorage.setItem("preferredVolume", preferredVolume.toString()); //store the new 'preferredVolume' in localStorage
+    }
+}
+            </pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Tue Jul 07 2020 20:46:38 GMT+0100 (British Summer Time)
+            </div>
+        </div>
+        <script src="prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="sorter.js"></script>
+        <script src="block-navigation.js"></script>
+    </body>
+</html>
+    
