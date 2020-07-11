@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>'Mars Rover: Spirit' Unit Tests For INDEX.HTML</title>
+
+    <!-- jasmine-related stylesheets -->
+    <link rel="shortcut icon" type="image/png" href="lib/jasmine_favicon.png">
+    <link rel="stylesheet" href="lib/jasmine.css">
+
+    <!-- stylesheets used in the App's 'index.html' page -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/fonts/ZCoolQingKeHuangYouGoogleFont.css" />
+
+    <!-- jasmine-library-related scripts -->
+    <script src="lib/jasmine.js"></script>
+    <script src="lib/jasmine-html.js"></script>
+    <script src="lib/boot.js"></script>
+
+    <!-- custom jasmine matchers -->
+    <script src="scripts/custom-matchers.js"></script>
+
+    <!-- w3schools' javascript file (used in setting up the martian slideshow) -->
+    <script src="scripts/w3.js"></script>
+
+  </head>
+  <body> <!-- onresize="resizedImage()" onpageshow="responsiveImage()": these events are created and simulated in 'startup_scripts.spec.js' -->
+    <div class="encompassing" style="display:none;"> <!-- this <div> element is not displayed so that it does not interfere with the display of the Unit Testing results -->
+      <h2 class="musicHeading" onclick="toggleAudioControls()">&#9834; &#9835; Music +/- &#9835; &#9834;<br/><span class="autoplayError"></span></h2>
+      <div class="audioControls" hidden="hidden">
+        <audio id="musicPlayer">
+          <source src="audio/mars_rover_music.mp3" type="audio/mpeg">Your browser does not support the audio tag.
+        </audio>
+        <button class="audio1" onclick="playAudio()">PLAY<br/><span class="play" >&#9658;</span></button>
+        <button class="audio2" onclick="pauseAudio()">PAUSE<br/><span class="stop">||</span></button>
+        <button class="audio3" onclick="volumeUp()"><i class="fa fa-volume-up"></i><br/><span class="volumeUp" >&plus;</span></button>
+        <button class="audio4" onclick="volumeDown()"><i class="fa fa-volume-down"></i><br/><span class="volumeDown">&minus;</span></button>
+        <p class="audio5" id="volumeDisplay"><i class="fa fa-volume-up"></i><br/></p>
+        <div class="progress">
+          <progress id="musicalProgress"></progress>
+          <p id="musicalPercentage" class="percentage"></p>
+          <p class="musicCredit"><strong>Inspiring music credit:</strong> <em>AShamaluevMusic</em> <strong>https://www.ashamaluevmusic.com/</strong></p>
+        </div>
+      </div>
+      <h1 class="w3-center w3-black w3-xlarge">MARS ROVER: SPIRIT</h1>
+      <p class="overview">The <strong>Spirit</strong> Rover was launched on 2003-06-10 UTC, and landed on Mars 2004-01-04 UTC.  <strong>Spirit</strong>'s mission was to work as a mechanical geologist, investigating the possibility that Mars was <em>wetter</em > - and capable of sustaining microbial life - in its ancient past. <strong>Spirit</strong>'s landing site was <em>Gusev Crater</em>, where mineral deposits hinted at Mars' <em>wet</em> history.</p>
+      <p class="overview">Like its robotic twin <em>Opportunity</em>, <strong>Spirit</strong> survived far longer than its expected 90-day lifespan.  <strong>Spirit</strong> worked on Mars for over six years, last communicating with Earth on 2010-03-21 UTC.  <strong>Spirit</strong> did a stellar job of searching for - and characterizing - a wide range of rocks and soils that lend weight to the hypothesis of Mars' <em>watery</em> past.</p>
+      <p class="overview"><strong>Spirit</strong>'s most notable scientific contributions include: finding rocks, in <em>Comanche</em>, ten times richer in magnesium and iron carbonates than any martian rocks previously studied; finding, in <em>Home Plate</em>, 90%-pure silica of the kind that usually exists in hot springs or hot steam vents on Earth; and - again at <em>Home Plate</em> - finding evidence of ancient, explosive volcanic activity catalysed by powerful steam eruptions from heated underground <em>water</em>.</p>
+      <p class="overview">The following slideshow displays ten photos taken by the <strong>Spirit</strong> Rover. This App provides access to all 124,550 photos detailed by the NASA Mars Rover API; click the button below the slideshow to view the images.</p>
+      <div id="loading" style="display:none;"><p>The slideshow requires an internet connection for the images to be fetched and displayed properly.<br/>Connection status: </p></div>
+      <div id="delayedDisplay" style="display:none;">
+        <figure class="container">
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/f/001/2F126468064EDN0000P1001L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/n/250/2N148561474EDN8800P1574L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/f/500/2F170749933EDNAAFQP1131L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/f/750/2F192958007EFFAO55P1110L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/n/999/2N215048225EFFAS00P1600L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/f/1250/2F237337944EFFAUCMP1214L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/p/1500/2P259524854EFFAY00P2282L2M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/n/1850/2N290601383EFFB0G2P0755L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/n/2050/2N308352001ESFB1E5P1561L0M1-BR.JPG</div>
+          <div class="martian_url_2">https://mars.nasa.gov/mer/gallery/all/2/p/2208/2P322473707ESFB27MP2600L8M1-BR.JPG</div>
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/f/001/2F126468064EDN0000P1001L0M1-BR.JPG" class="mars" alt="First photo taken by the Spirit Rover" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/n/250/2N148561474EDN8800P1574L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 250 [2004-09-16]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/f/500/2F170749933EDNAAFQP1131L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 500 [2005-05-31]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/f/750/2F192958007EFFAO55P1110L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 750 [2006-02-12]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/n/999/2N215048225EFFAS00P1600L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 999 [2006-10-26]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/f/1250/2F237337944EFFAUCMP1214L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 1250 [2007-07-11]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/p/1500/2P259524854EFFAY00P2282L2M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 1500 [2008-03-24]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/n/1850/2N290601383EFFB0G2P0755L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 1850 [2009-03-18]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/n/2050/2N308352001ESFB1E5P1561L0M1-BR.JPG" class="mars" alt="Photo taken by the Spirit Rover on Spirit Martian Sol 2050 [2009-10-10]" />
+          <img src="https://mars.nasa.gov/mer/gallery/all/2/p/2208/2P322473707ESFB27MP2600L8M1-BR.JPG" class="mars" alt="Last photo taken by the Spirit Rover on Spirit Martian Sol 2208 [2010-03-21]" />
+          <figcaption class="photo_description">The First Photo Taken by the <em>Spirit</em> Rover</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 250 [2004-09-16]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 500 [2005-05-31]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 750 [2006-02-12]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 999 [2006-10-26]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 1250 [2007-07-11]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 1500 [2008-03-24]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 1850 [2009-03-18]</figcaption>
+          <figcaption class="photo_description">Photo Taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 2050 [2009-10-10]</figcaption>
+          <figcaption class="photo_description">Last photo taken by the <em>Spirit</em> Rover on <em>Spirit</em> Martian Sol 2208 [2010-03-21]</figcaption>
+        </figure>
+      </div>
+      <button class="roverButton" onclick="solSelectScreen()">ACCESS ALL 124,550 <em>SPIRIT</em> ROVER PHOTOS</button>
+      <p class="textCredit">Text Credit: https://mars.nasa.gov/mer/mission/overview/</p>
+    </div> <!-- end of encompassing <div> -->
+    <!-- include source JavaScript files here... -->
+    <script src="scripts/audio_scripts.js"></script>
+    <script src="scripts/startup_scripts.js"></script>
+    <!-- include unit test file here -->
+    <script src="scripts/startup_scripts.spec.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>'Mars Rover: Spirit' Unit Tests For SPIRIT_ACCORDION.HTML</title>
+
+        <!-- jasmine-related stylesheets -->
+        <link rel="shortcut icon" type="image/png" href="lib/jasmine_favicon.png">
+        <link rel="stylesheet" href="lib/jasmine.css">
+
+        <!-- stylesheets used in the App's 'spirit_accordion.html' page -->
+        <link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/fonts/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/fonts/ZCoolQingKeHuangYouGoogleFont.css" />
+
+        <!-- jasmine-library-related scripts -->
+        <script src="lib/jasmine.js"></script>
+        <script src="lib/jasmine-html.js"></script>
+        <script src="lib/boot.js"></script>
+
+        <!-- custom jasmine matchers -->
+        <script src="scripts/custom-matchers.js"></script>
+
+        <!-- w3schools' javascript file (used in setting up the martian slideshow) -->
+        <script src="scripts/w3.js"></script>
+    </head>
+    <body> <!-- this commented-out pageshow event will be simulated and tested in the unit tests for this page: onpageshow="showProgress()" --> <!-- begins the definition of the <body> section of the <html> document: the 'showProgress()' function will be invoked every time that the <body> element is navigated to -->
+        <div class="encompassing" style="display:none;"> <!-- defines an 'encompassing' <div> that will 'house' all the other elements; for the purpose of unit testing the page, this <div> element is not shown -->
+            <h2 class="musicHeading" onclick="toggleAudioControls()" >&#9834; &#9835; Music +/- &#9835; &#9834;<br/><span id="pageStatus">Page Status: Loading...</span><br/> <!-- defines a <span> element that will give the User an update on the page's 'loading' status --> <span class="autoplayError"></span> <!-- defines a <span> element that will give the User feedback as to whether autoplay functionality is enabled on their device --></h2> <!-- defines a <h2> element that facilitates the display/hide toggling of audio controls in response to User clicks -->
+            <div class="audioControls" hidden="hidden"> <!-- defines an initially-hidden <div> element that will 'house' the audio controls -->
+                <audio id="musicPlayer"> <!-- begins the definition of a 'musicPlayer' <audio> element -->
+                    <source src="../audio/mars_rover_music.mp3" type="audio/mpeg"> <!-- defines the musical source of the 'musicPlayer' -->
+                    Your browser does not support the audio tag. <!-- defines text that will be displayed if the User's browser does not support the <audio> element -->
+                </audio> <!-- ends the definition of a 'musicPlayer' <audio> element -->
+                <button class="audio1" onclick="playAudio()">PLAY<br/><span class="play" >&#9658;</span></button> <!-- defines a 'play' button, with accompanying 'play' symbol -->
+                <button class="audio2" onclick="pauseAudio()">PAUSE<br/><span class="stop">||</span></button> <!-- defines a 'pause' button, with accompanying 'pause' symbol -->
+                <button class="audio3" onclick="volumeUp()"><i class="fa fa-volume-up"></i><br/><span class="volumeUp" >&plus;</span></button> <!-- defines a 'volume up' button, with accompanying Font Awesome 'volume up' symbol -->
+                <button class="audio4" onclick="volumeDown()"><i class="fa fa-volume-down"></i><br/><span class="volumeDown">&minus;</span></button> <!-- defines a 'volume down' button, with accompanying Font Awesome 'volume down' symbol -->
+                <p class="audio5" id="volumeDisplay"><i class="fa fa-volume-up"></i><br/></p> <!-- defines a paragraph that will display the volume of the music player [as a percentage of its maximum], with accompanying Font Awesome symbol -->
+                <div class="progress"> <!-- begins the definition of a 'progress' <div> that will 'house' elements relating to the musical progress of the 'musicPlayer' -->
+                    <progress id="musicalProgress"></progress> <!-- defines a 'musicalProgress' <progress> element that will give the User visual feedback on the current track position -->
+                    <p id="musicalPercentage" class="percentage"></p> <!-- defines a 'musicalPercentage' <p> that will give the User visual feedback (in percentage terms) on the current track position -->
+                    <p class="musicCredit"><strong>Inspiring music credit:</strong> <em>AShamaluevMusic</em> <strong>https://www.ashamaluevmusic.com/</strong></p> <!-- defines a musical <p> element that credits AShamaluevMusic appropriately -->
+                </div> <!-- ends the 'progress' <div> -->
+            </div> <!-- ends the 'audioControls' <div> -->
+            <h1 class="w3-center w3-black w3-xlarge">MARS ROVER: SPIRIT</h1> <!-- defines a <h1> heading element, styled with classes from the 'w3.css' CSS library -->
+            <div id="pageTraversal"> <!-- a <div> element that facilitates speedy page traversal -->
+                <input id="desiredSol" type="number" placeholder="Enter Sol [1 - 2208]..." /> <!-- an <input> element that allows the User to enter the number of the sol to which they wish to traverse -->
+                <button id="navigateToSol" onclick="traversePage()">Traverse Page</button> <!-- a <button> element that navigates the User to their desired sol -->
+            </div> <!-- end of the 'pageTraversal' <div> -->
+            <button class="titleReturn" onclick="titleReturn()"><strong><span class="backArrow">&lt;--</span> Back To TITLE SCREEN</strong></button> <!-- defines a <button> element that takes the User back to the title screen when clicked -->
+            <button class="accordion" onclick="toggleDisplay(this, this.className)"><i class="fa fa-hand-o-right"></i><span class="khaki"><strong><em>SPIRIT</em> ROVER </strong></span><span class="w3-deep-purple"><em>CAMERA ABBREVIATIONS</em></span></button> <!-- defines a button that facilitates the hide/show toggling of the ensuing <div> element, which in turn provides information about NASA's use of camera abbreviations -->
+            <div class="panel"> <!-- begins the definition of a <div> element that toggles between being hidden/displayed as the User sees fit -->
+                <p>'FHAZ' = <strong>F</strong>ront <strong>Haz</strong>ard Avoidance Camera.  'NAVCAM' = <strong>Nav</strong>igation <strong>Cam</strong>era.  'PANCAM' = <strong>Pan</strong>oramic <strong>Cam</strong>era.  'MINITES' = <strong>Mini</strong>ature <strong>T</strong>hermal <strong>E</strong>mission <strong>S</strong>pectrometer.  'ENTRY' = <strong>Entry</strong>, Descent, and Landing Camera.  'RHAZ' = <strong>R</strong>ear <strong>Haz</strong>ard Avoidance Camera.</p>
+            </div> <!-- ends the "panel" <div> element -->
+            <button id="1" class="accordion" onclick="toggleDisplay(this, this.className)"><i class="fa fa-hand-o-right"></i><span class="khaki"><em>SPIRIT</em> <strong>MARTIAN SOL 1</strong> </span><span class="w3-deep-purple"><em>[2004-01-05]</em></span></button> <!-- defines a button that facilitates the hide/show toggling of the ensuing <div> element, which in turn provides information relating to the martian sol in question [the number of photos taken; the cameras used to take the photos] and a link to a page dedicated to displaying all the images available for that particular sol -->
+            <div class="panel"> <!-- begins the definition of a <div> element that toggles between being hidden/displayed as the User sees fit -->
+                <p><strong>Total photos</strong>: 77.  <strong>Cameras used</strong>: 'ENTRY', 'FHAZ', 'NAVCAM', 'PANCAM', and 'RHAZ'.  <br/><br/><strong><a href="../sols/sol_1.html">SOL 1 SLIDESHOW</a></strong><br/><br/><strong><a href="#pageTraversal"><i class="fa fa-arrow-circle-up red"></i> Return to Page Traversal Options <i class="fa fa-arrow-circle-up red"></i></a></strong></p>
+            </div> <!-- ends the "panel" <div> element -->
+            <!-- and repeat the [<button>Spirit Martian Sol # [####-##-##]</button> -- <div><p>Total photos: #.  Cameras used: #. Sol # Slideshow.</p></div>] layout formula for the remaining 2,000-ish martian sols -->
+            <button id="2" class="accordion" onclick="toggleDisplay(this, this.className)"><i class="fa fa-hand-o-right"></i><span class="khaki"><em>SPIRIT</em> <strong>MARTIAN SOL 2</strong> </span><span class="w3-deep-purple"><em>[2004-01-06]</em></span></button>
+            <div class="panel">
+                <p><strong>Total photos</strong>: 125.  <strong>Cameras used</strong>: 'MINITES', 'NAVCAM', and 'PANCAM'.  <br/><br/><strong><a href="../sols/sol_2.html">SOL 2 SLIDESHOW</a></strong><br/><br/><strong><a href="#pageTraversal"><i class="fa fa-arrow-circle-up red"></i> Return to Page Traversal Options <i class="fa fa-arrow-circle-up red"></i></a></strong></p>
+            </div>
+        </div> <!-- ends the 'encompassing' <div> -->
+        <script src="scripts/audio_scripts.js"></script> <!-- includes a reference to the '../scripts/audio_scripts.js" JavaScript file -->
+        <script>
+            let audioControls = document.querySelector(".audioControls"); //make the 'audioControls' variable refer to the first element in the <html> document with a className of 'audioControls'
+            function toggleAudioControls() { //called when the 'Music +/-' <h2> element is clicked, to toggle betwen showing/hiding the audio controls
+                if(audioControls.hasAttribute("hidden")) { //if the 'audioControls' <div> element has a "hidden" attribute
+                    if(!musicPlayer) { //if 'musicPlayer' equates to a 'falsy' value
+                        musicPlayer = document.getElementById("musicPlayer"); //obtain a reference to the 'musicPlayer' <audio> element
+                        volumeDisplay = document.getElementById("volumeDisplay"); //obtain a reference to the 'volumeDisplay' <p>
+                        musicalProgress = document.getElementById("musicalProgress"); //obtain a reference to the 'musicalProgress' <progress> element
+                        musicalPercentage = document.getElementById("musicalPercentage"); //obtain a reference to the 'musicalPercentage' <p> element
+                        autoplayError = document.querySelector(".autoplayError"); //obtain a reference to the 'autoplayError' <span> element
+                        showProgress(); //invoke the 'showProgress()' function in order to update the 'volumeDisplay', 'musicalProgress', 'musicalPercentage', and (potentially) the 'autoplayError' elements
+                    }
+                    audioControls.removeAttribute("hidden"); //remove the "hidden" attribute from the 'audioControls' <div>
+                }
+                else { //otherwise, if the 'audioControls' <div> element does not have a "hidden" attribute
+                    audioControls.setAttribute("hidden", "hidden"); //set a "hidden" attribute on the 'audioControls' <div> element
+                }
+            }
+        </script>
+        <script src="scripts/solSelect_scripts.js"></script> <!-- includes a reference to the "../scripts/solSelect_scripts.js" JavaScript file -->
+        <script src="scripts/solSelect_scripts.spec.js"></script> <!-- includes a reference to the unit test file -->
+    </body>
+</html>
