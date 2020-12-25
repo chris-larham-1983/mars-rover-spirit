@@ -4,4 +4,6 @@ Shows all the relevant files for the 'Mars Rover: Spirit' app, including the 'he
 
 [![Build Status](https://travis-ci.com/chris-larham-1983/mars-rover-spirit.svg?branch=master)](https://travis-ci.com/chris-larham-1983/mars-rover-spirit)
 
+<img src=https://build.phonegap.com/apps/3736159/badge/1734292681/version.svg />
 <img src=https://build.phonegap.com/apps/3736159/badge/1734292681.svg />
+<img src=https://build.phonegap.com/apps/3736159/badge/1734292681/android.svg />
